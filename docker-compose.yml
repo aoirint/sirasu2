@@ -1,0 +1,9 @@
+version: '3.9'
+services:
+  app:
+    build: .
+    command: "gosu user uvicorn run:app --reload --host 0.0.0.0 --port 8000"
+    ports:
+      - '127.0.0.1:8000:8000'
+    volumes:
+      - '${UPLOAD_ROOT}:/uploads'
